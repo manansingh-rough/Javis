@@ -1,0 +1,87 @@
+# ─────────────────────────────────────────────────────────────
+# NEXUS AI — Development Infrastructure
+# ─────────────────────────────────────────────────────────────
+# Spins up the cloud backend, PostgreSQL, and Redis for local
+# development and testing of the billing/monetization system.
+# ─────────────────────────────────────────────────────────────
+
+version: "3.9"
+
+services:
+  # ── Cloud Backend ──────────────────────────────────────────
+  backend:
+    build:
+      context: ./nexus_cloud_backend
+      dockerfile: Dockerfile
+    container_name: nexus-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://nexus:nexus_pass@postgres:5432/nexus_cloud
+      - DATABASE_SYNC_URL=postgresql://nexus:nexus_pass@postgres:5432/nexus_cloud
+      - REDIS_URL=redis://redis:6379/0
+      - LICENSE_SIGNING_PRIVATE_KEY=${LICENSE_SIGNING_PRIVATE_KEY:-}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY:-sk_test_placeholder}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET:-whsec_placeholder}
+      - STRIPE_PRICE_PERSONAL_PRO_MONTHLY=${STRIPE_PRICE_PERSONAL_PRO_MONTHLY:-}
+      - STRIPE_PRICE_PERSONAL_PRO_ANNUAL=${STRIPE_PRICE_PERSONAL_PRO_ANNUAL:-}
+      - STRIPE_PRICE_TEAM_MONTHLY=${STRIPE_PRICE_TEAM_MONTHLY:-}
+      - STRIPE_PRICE_ENTERPRISE_ANNUAL=${STRIPE_PRICE_ENTERPRISE_ANNUAL:-}
+      - JWT_SECRET=${JWT_SECRET:-dev-jwt-secret-change-in-production}
+      - DEBUG=true
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: unless-stopped
+    volumes:
+      - ./nexus_cloud_backend:/app
+    networks:
+      - nexus-network
+
+  # ── PostgreSQL ─────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: nexus-postgres
+    environment:
+      POSTGRES_USER: nexus
+      POSTGRES_PASSWORD: nexus_pass
+      POSTGRES_DB: nexus_cloud
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nexus -d nexus_cloud"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - nexus-network
+
+  # ── Redis ──────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: nexus-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - nexus-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  nexus-network:
+    driver: bridge

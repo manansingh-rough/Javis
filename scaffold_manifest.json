@@ -1,0 +1,930 @@
+{
+  "generated_at": "2026-06-27T14:27:00.510746",
+  "nexus_version": "4.0.0",
+  "total_files": 115,
+  "created": 115,
+  "skipped": 0,
+  "errors": 0,
+  "files": [
+    {
+      "path": "main.py",
+      "purpose": "Entry point - hardened boot sequence",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.690812",
+      "size_bytes": 346
+    },
+    {
+      "path": "requirements.txt",
+      "purpose": "Pinned Python dependencies for builds",
+      "type": "requirements",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.694840",
+      "size_bytes": 59
+    },
+    {
+      "path": "requirements-dev.txt",
+      "purpose": "Dev and testing dependencies",
+      "type": "requirements",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.702843",
+      "size_bytes": 50
+    },
+    {
+      "path": "setup.py",
+      "purpose": "pip-installable package definition",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.709767",
+      "size_bytes": 343
+    },
+    {
+      "path": "pyproject.toml",
+      "purpose": "PEP 517/518 build config",
+      "type": "toml",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.720758",
+      "size_bytes": 46
+    },
+    {
+      "path": "README.md",
+      "purpose": "Setup guide and quickstart",
+      "type": "markdown",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.727499",
+      "size_bytes": 40
+    },
+    {
+      "path": "CHANGELOG.md",
+      "purpose": "Semantic version history v4.0.0+",
+      "type": "markdown",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.730194",
+      "size_bytes": 49
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "purpose": "Plugin developer guide",
+      "type": "markdown",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.737733",
+      "size_bytes": 42
+    },
+    {
+      "path": "LICENSE",
+      "purpose": "MIT License",
+      "type": "license",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.746857",
+      "size_bytes": 79
+    },
+    {
+      "path": ".env.example",
+      "purpose": "All environment variables documented",
+      "type": "env",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.757479",
+      "size_bytes": 88
+    },
+    {
+      "path": ".gitignore",
+      "purpose": "Git ignore patterns",
+      "type": "gitignore",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.761217",
+      "size_bytes": 116
+    },
+    {
+      "path": "Makefile",
+      "purpose": "Developer shortcuts",
+      "type": "makefile",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.764801",
+      "size_bytes": 142
+    },
+    {
+      "path": "Dockerfile",
+      "purpose": "Sandbox execution container",
+      "type": "dockerfile",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.776500",
+      "size_bytes": 72
+    },
+    {
+      "path": "docker-compose.yml",
+      "purpose": "Local dev with optional ChromaDB",
+      "type": "yaml",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.786515",
+      "size_bytes": 54
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "purpose": "Pre-commit hooks config",
+      "type": "yaml",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.792331",
+      "size_bytes": 45
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "purpose": "CI: lint + test + type-check",
+      "type": "yaml",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.800452",
+      "size_bytes": 50
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "purpose": "CD: build + publish to PyPI",
+      "type": "yaml",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.806064",
+      "size_bytes": 49
+    },
+    {
+      "path": ".github/workflows/security-scan.yml",
+      "purpose": "Weekly security scan",
+      "type": "yaml",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.821754",
+      "size_bytes": 42
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "purpose": "Bug report template",
+      "type": "markdown",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.830908",
+      "size_bytes": 37
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "purpose": "Feature request template",
+      "type": "markdown",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.840894",
+      "size_bytes": 47
+    },
+    {
+      "path": "nexus_config/__init__.py",
+      "purpose": "Config package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.845880",
+      "size_bytes": 329
+    },
+    {
+      "path": "nexus_config/settings.py",
+      "purpose": "Pydantic BaseSettings hub",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.848402",
+      "size_bytes": 341
+    },
+    {
+      "path": "nexus_config/audit_logger.py",
+      "purpose": "JSON-lines audit log with @audited",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.856097",
+      "size_bytes": 363
+    },
+    {
+      "path": "nexus_config/metrics.py",
+      "purpose": "Prometheus-compatible metrics",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.858922",
+      "size_bytes": 348
+    },
+    {
+      "path": "nexus_config/health_check.py",
+      "purpose": "nexus health CLI",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.862138",
+      "size_bytes": 327
+    },
+    {
+      "path": "nexus_config/crash_reporter.py",
+      "purpose": "Crash report generation",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.864165",
+      "size_bytes": 343
+    },
+    {
+      "path": "nexus_audio/__init__.py",
+      "purpose": "Audio package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.877478",
+      "size_bytes": 326
+    },
+    {
+      "path": "nexus_audio/wake_word.py",
+      "purpose": "Porcupine + Whisper daemon",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.879476",
+      "size_bytes": 343
+    },
+    {
+      "path": "nexus_audio/tts_engine.py",
+      "purpose": "edge-tts + pygame TTS",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.881468",
+      "size_bytes": 334
+    },
+    {
+      "path": "nexus_audio/audio_utils.py",
+      "purpose": "Audio device enumeration",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.889955",
+      "size_bytes": 341
+    },
+    {
+      "path": "nexus_audio/audio_processor.py",
+      "purpose": "Silence detection, normalization",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.893941",
+      "size_bytes": 361
+    },
+    {
+      "path": "nexus_memory/__init__.py",
+      "purpose": "Memory package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.896974",
+      "size_bytes": 329
+    },
+    {
+      "path": "nexus_memory/vector_store.py",
+      "purpose": "ChromaDB with 4 collections",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.902959",
+      "size_bytes": 349
+    },
+    {
+      "path": "nexus_memory/session_context.py",
+      "purpose": "Cross-session state, preferences",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.908115",
+      "size_bytes": 362
+    },
+    {
+      "path": "nexus_memory/memory_manager.py",
+      "purpose": "Unified memory API",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.910100",
+      "size_bytes": 333
+    },
+    {
+      "path": "nexus_memory/memory_compressor.py",
+      "purpose": "Memory summarization",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.912547",
+      "size_bytes": 340
+    },
+    {
+      "path": "nexus_tools/__init__.py",
+      "purpose": "Tools package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.920385",
+      "size_bytes": 326
+    },
+    {
+      "path": "nexus_tools/registry.py",
+      "purpose": "22-tool LangChain registry",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.924846",
+      "size_bytes": 342
+    },
+    {
+      "path": "nexus_tools/secure_sandbox.py",
+      "purpose": "3-layer code execution sandbox",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.928802",
+      "size_bytes": 356
+    },
+    {
+      "path": "nexus_tools/capability_synthesizer.py",
+      "purpose": "Self-healing capability synthesis",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.938660",
+      "size_bytes": 370
+    },
+    {
+      "path": "nexus_tools/rate_limiter.py",
+      "purpose": "Token bucket rate limiter",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.943251",
+      "size_bytes": 344
+    },
+    {
+      "path": "nexus_tools/tool_validator.py",
+      "purpose": "Per-tool Pydantic validation",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.948002",
+      "size_bytes": 352
+    },
+    {
+      "path": "nexus_tools/tools/__init__.py",
+      "purpose": "Tools sub-package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.955551",
+      "size_bytes": 340
+    },
+    {
+      "path": "nexus_tools/tools/t01_system_command.py",
+      "purpose": "Whitelisted command execution",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.960588",
+      "size_bytes": 364
+    },
+    {
+      "path": "nexus_tools/tools/t02_file_manager.py",
+      "purpose": "Unified file I/O",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.963980",
+      "size_bytes": 336
+    },
+    {
+      "path": "nexus_tools/tools/t03_web_search.py",
+      "purpose": "DuckDuckGo + Brave Search",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.972003",
+      "size_bytes": 352
+    },
+    {
+      "path": "nexus_tools/tools/t04_web_fetch.py",
+      "purpose": "httpx async content extraction",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.976067",
+      "size_bytes": 361
+    },
+    {
+      "path": "nexus_tools/tools/t05_browser_ghost.py",
+      "purpose": "Playwright browser automation",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.979066",
+      "size_bytes": 363
+    },
+    {
+      "path": "nexus_tools/tools/t06_desktop_automation.py",
+      "purpose": "PyAutoGUI click/type/screenshot",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.988781",
+      "size_bytes": 372
+    },
+    {
+      "path": "nexus_tools/tools/t07_python_interpreter.py",
+      "purpose": "Sandboxed Python execution",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.991782",
+      "size_bytes": 362
+    },
+    {
+      "path": "nexus_tools/tools/t08_document_builder.py",
+      "purpose": "DOCX/PPTX/PDF/MD generation",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.994165",
+      "size_bytes": 362
+    },
+    {
+      "path": "nexus_tools/tools/t09_pdf_reader.py",
+      "purpose": "PDF text + OCR extraction",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.995935",
+      "size_bytes": 352
+    },
+    {
+      "path": "nexus_tools/tools/t10_window_manager.py",
+      "purpose": "Window focus/resize/list",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:26:59.998336",
+      "size_bytes": 354
+    },
+    {
+      "path": "nexus_tools/tools/t11_clipboard_manager.py",
+      "purpose": "Clipboard read/write/history",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.011470",
+      "size_bytes": 365
+    },
+    {
+      "path": "nexus_tools/tools/t12_local_vector_db.py",
+      "purpose": "Agent-facing ChromaDB interface",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.015154",
+      "size_bytes": 369
+    },
+    {
+      "path": "nexus_tools/tools/t13_system_monitor.py",
+      "purpose": "CPU/RAM/Disk/Network metrics",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.026523",
+      "size_bytes": 362
+    },
+    {
+      "path": "nexus_tools/tools/t14_code_editor_control.py",
+      "purpose": "VS Code automation",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.029874",
+      "size_bytes": 347
+    },
+    {
+      "path": "nexus_tools/tools/t15_email_client.py",
+      "purpose": "SMTP send + IMAP read",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.038031",
+      "size_bytes": 346
+    },
+    {
+      "path": "nexus_tools/tools/t16_workflow_macro.py",
+      "purpose": "Execute .nexflow.json macros",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.044566",
+      "size_bytes": 362
+    },
+    {
+      "path": "nexus_tools/tools/t17_image_processor.py",
+      "purpose": "PIL resize/crop/convert/OCR",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.046606",
+      "size_bytes": 361
+    },
+    {
+      "path": "nexus_tools/tools/t18_data_analyzer.py",
+      "purpose": "Pandas CSV/Excel analysis",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.056524",
+      "size_bytes": 355
+    },
+    {
+      "path": "nexus_tools/tools/t19_process_manager.py",
+      "purpose": "psutil process list/kill/launch",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.060147",
+      "size_bytes": 369
+    },
+    {
+      "path": "nexus_tools/tools/t20_notification_sender.py",
+      "purpose": "plyer desktop notifications",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.062306",
+      "size_bytes": 365
+    },
+    {
+      "path": "nexus_tools/tools/t21_calendar_manager.py",
+      "purpose": "iCal + Google Calendar",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.064451",
+      "size_bytes": 352
+    },
+    {
+      "path": "nexus_tools/tools/t22_git_operations.py",
+      "purpose": "Git status/commit/push/pull",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.075630",
+      "size_bytes": 360
+    },
+    {
+      "path": "nexus_brain/__init__.py",
+      "purpose": "Brain package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.079159",
+      "size_bytes": 326
+    },
+    {
+      "path": "nexus_brain/orchestrator.py",
+      "purpose": "LangGraph ReAct engine",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.081066",
+      "size_bytes": 338
+    },
+    {
+      "path": "nexus_brain/task_planner.py",
+      "purpose": "DAG task decomposition",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.089451",
+      "size_bytes": 338
+    },
+    {
+      "path": "nexus_brain/workflow_compiler.py",
+      "purpose": "NL to .nexflow.json compiler",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.093240",
+      "size_bytes": 355
+    },
+    {
+      "path": "nexus_brain/context_builder.py",
+      "purpose": "Token-budget-aware prompt assembly",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.095826",
+      "size_bytes": 365
+    },
+    {
+      "path": "nexus_brain/llm_router.py",
+      "purpose": "Triple LLM fallback with circuit breaker",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.098168",
+      "size_bytes": 372
+    },
+    {
+      "path": "nexus_brain/agent_state.py",
+      "purpose": "TypedDict NexusState schema",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.106836",
+      "size_bytes": 347
+    },
+    {
+      "path": "nexus_brain/intent_classifier.py",
+      "purpose": "Local Ollama intent classification",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.109826",
+      "size_bytes": 367
+    },
+    {
+      "path": "nexus_brain/conversation_summarizer.py",
+      "purpose": "Sliding window context management",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.112009",
+      "size_bytes": 371
+    },
+    {
+      "path": "nexus_ui/__init__.py",
+      "purpose": "UI package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.115017",
+      "size_bytes": 317
+    },
+    {
+      "path": "nexus_ui/custom_hud.py",
+      "purpose": "CustomTkinter HUD 4-zone interface",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.124524",
+      "size_bytes": 357
+    },
+    {
+      "path": "nexus_ui/onboarding.py",
+      "purpose": "First-boot 4-screen setup wizard",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.128052",
+      "size_bytes": 353
+    },
+    {
+      "path": "nexus_ui/notification_manager.py",
+      "purpose": "System tray + toast notifications",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.136111",
+      "size_bytes": 365
+    },
+    {
+      "path": "nexus_ui/theme_engine.py",
+      "purpose": "Color palette, fonts, DPI scaling",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.146573",
+      "size_bytes": 357
+    },
+    {
+      "path": "nexus_ui/animation_engine.py",
+      "purpose": "Particles, arc reactor, waveform",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.154066",
+      "size_bytes": 359
+    },
+    {
+      "path": "nexus_ui/dag_visualizer.py",
+      "purpose": "Real-time DAG visualization",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.160205",
+      "size_bytes": 347
+    },
+    {
+      "path": "nexus_plugins/__init__.py",
+      "purpose": "Plugins package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.163187",
+      "size_bytes": 332
+    },
+    {
+      "path": "nexus_plugins/plugin_base.py",
+      "purpose": "PluginMetadata + SDK docs",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.174056",
+      "size_bytes": 345
+    },
+    {
+      "path": "nexus_plugins/email_plugin.py",
+      "purpose": "SMTP/IMAP operations",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.178787",
+      "size_bytes": 336
+    },
+    {
+      "path": "nexus_plugins/calendar_plugin.py",
+      "purpose": "iCal + Google Calendar",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.181532",
+      "size_bytes": 343
+    },
+    {
+      "path": "nexus_plugins/github_plugin.py",
+      "purpose": "GitHub PRs/issues/CI",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.190052",
+      "size_bytes": 337
+    },
+    {
+      "path": "nexus_plugins/notion_plugin.py",
+      "purpose": "Notion pages/databases",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.193126",
+      "size_bytes": 341
+    },
+    {
+      "path": "nexus_plugins/slack_plugin.py",
+      "purpose": "Slack messages/channels",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.197649",
+      "size_bytes": 342
+    },
+    {
+      "path": "nexus_plugins/jira_plugin.py",
+      "purpose": "Jira issues/sprints",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.204024",
+      "size_bytes": 333
+    },
+    {
+      "path": "nexus_enterprise/__init__.py",
+      "purpose": "Enterprise package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.210728",
+      "size_bytes": 341
+    },
+    {
+      "path": "nexus_enterprise/policy_engine.py",
+      "purpose": "Tool whitelist/blacklist per role",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.228796",
+      "size_bytes": 366
+    },
+    {
+      "path": "nexus_enterprise/sso_handler.py",
+      "purpose": "SAML 2.0 + OAuth 2.0 handler",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.261877",
+      "size_bytes": 354
+    },
+    {
+      "path": "nexus_enterprise/audit_exporter.py",
+      "purpose": "Audit log to CSV/SIEM export",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.276806",
+      "size_bytes": 357
+    },
+    {
+      "path": "nexus_enterprise/admin_cli.py",
+      "purpose": "nexus-admin CLI",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.280796",
+      "size_bytes": 326
+    },
+    {
+      "path": "nexus_cli/__init__.py",
+      "purpose": "CLI package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.296249",
+      "size_bytes": 320
+    },
+    {
+      "path": "nexus_cli/cli.py",
+      "purpose": "Click CLI: run/health/install/config",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.305787",
+      "size_bytes": 355
+    },
+    {
+      "path": "nexus_cli/installer.py",
+      "purpose": "Plugin marketplace installer",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.311941",
+      "size_bytes": 345
+    },
+    {
+      "path": "tests/__init__.py",
+      "purpose": "Test package init",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.326667",
+      "size_bytes": 318
+    },
+    {
+      "path": "tests/conftest.py",
+      "purpose": "Shared pytest fixtures",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.331699",
+      "size_bytes": 328
+    },
+    {
+      "path": "tests/test_sandbox.py",
+      "purpose": "25 unit tests for sandbox",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.336781",
+      "size_bytes": 338
+    },
+    {
+      "path": "tests/test_capability_synthesizer.py",
+      "purpose": "10 integration tests for synthesis",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.346108",
+      "size_bytes": 371
+    },
+    {
+      "path": "tests/test_orchestrator.py",
+      "purpose": "8 end-to-end agent tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.360895",
+      "size_bytes": 341
+    },
+    {
+      "path": "tests/test_settings.py",
+      "purpose": "Boot validation tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.371622",
+      "size_bytes": 331
+    },
+    {
+      "path": "tests/test_tools.py",
+      "purpose": "All 22 tool tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.390018",
+      "size_bytes": 320
+    },
+    {
+      "path": "tests/test_memory.py",
+      "purpose": "ChromaDB + session tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.394509",
+      "size_bytes": 335
+    },
+    {
+      "path": "tests/test_task_planner.py",
+      "purpose": "DAG decomposition tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.404035",
+      "size_bytes": 339
+    },
+    {
+      "path": "tests/test_workflow_compiler.py",
+      "purpose": "Workflow compile/run tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.412061",
+      "size_bytes": 350
+    },
+    {
+      "path": "tests/test_llm_router.py",
+      "purpose": "Fallback + circuit breaker tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.423182",
+      "size_bytes": 355
+    },
+    {
+      "path": "tests/test_intent_classifier.py",
+      "purpose": "Classification tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.430342",
+      "size_bytes": 338
+    },
+    {
+      "path": "tests/test_plugin_system.py",
+      "purpose": "Plugin load/reload/security tests",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.438224",
+      "size_bytes": 360
+    },
+    {
+      "path": "tests/benchmarks/__init__.py",
+      "purpose": "Benchmarks package",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.446938",
+      "size_bytes": 331
+    },
+    {
+      "path": "tests/benchmarks/bench_sandbox.py",
+      "purpose": "AST validation perf benchmarks",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.459840",
+      "size_bytes": 360
+    },
+    {
+      "path": "tests/benchmarks/bench_memory.py",
+      "purpose": "ChromaDB query perf benchmarks",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.489318",
+      "size_bytes": 359
+    },
+    {
+      "path": "tests/benchmarks/bench_synthesis.py",
+      "purpose": "End-to-end synthesis benchmarks",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.498644",
+      "size_bytes": 364
+    },
+    {
+      "path": "tests/benchmarks/bench_ui.py",
+      "purpose": "UI frame rate benchmarks",
+      "type": "python",
+      "status": "created",
+      "timestamp": "2026-06-27T14:27:00.510746",
+      "size_bytes": 343
+    }
+  ]
+}

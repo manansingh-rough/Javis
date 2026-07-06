@@ -1,0 +1,3 @@
+# Contributing
+
+Plugin developer guide
